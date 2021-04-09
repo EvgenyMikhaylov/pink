@@ -1,0 +1,85 @@
+.logo {
+  width: 74px;
+  height: 23px;
+
+  @include tablet-width {
+    width: 150px;
+    height: 40px;
+  }
+
+  &__mobile-pink {
+    display: inline-block;
+
+    @include tablet-width {
+      display: none;
+    }
+  }
+
+  &__tablet-glasses,
+  &__desktop-glasses,
+  &__pink,
+  &__point,
+  &__middle,
+  &__stars {
+    display: none;
+  }
+
+  &__tablet-glasses {
+    @include tablet-width {
+      display: inline-block;
+    }
+
+    @include desktop-width {
+      display: none;
+    }
+  }
+
+  &__pink {
+    @include tablet-width {
+      display: inline-block;
+    }
+  }
+
+  &__desktop-glasses,
+  &__point,
+  &__middle,
+  &__stars {
+    @include desktop-width {
+      display: inline-block;
+    }
+  }
+
+  &--footer {
+    width: 150px;
+    height: 40px;
+
+    .logo {
+      &__pink {
+        display: inline-block;
+      }
+
+      &__pink,
+      &__stars {
+        path {
+          fill: $dark-blue;
+        }
+      }
+
+      &__mobile-pink {
+        display: none;
+      }
+
+      &__tablet-glasses {
+        display: inline-block;
+      }
+
+      &__tablet-glasses,
+      &__desktop-glasses,
+      &__middle {
+        path {
+          fill: $pink;
+        }
+      }
+    }
+  }
+}

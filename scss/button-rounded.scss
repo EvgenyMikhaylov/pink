@@ -1,0 +1,27 @@
+.button-rounded {
+  display: block;
+  box-sizing: border-box;
+  width: 280px;
+  height: 55px;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 16px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+
+  border: 3px solid #ffffff;
+  border-radius: 25px;
+
+  @include desktop-width {
+    width: 300px;
+    padding-top: 13px;
+
+    font-size: 21px;
+    line-height: 21px;
+  }
+}

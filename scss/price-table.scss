@@ -1,0 +1,370 @@
+.price-table {
+  background-color: #ffffff;
+  border-collapse: collapse;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+
+  @include tablet-width {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  @include desktop-width {
+    width: 942px;
+  }
+
+  &__th-cell {
+    font-weight: 700;
+    min-width: 140px;
+    max-width: 140px;
+    padding: 14px 68px 25px;
+    background-color: $dark-blue;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    border-left-width: 0;
+    border-left-style: none;
+    border-right: 2px solid #e5e5e5;
+    overflow: hidden;
+
+    @include tablet-width {
+      max-width: 86px;
+      min-width: 86px;
+      font-size: 16px;
+      padding: 11px 33px 7px;
+      border-top-width: 0;
+      border-bottom-width: 0;
+    }
+
+    @include desktop-width {
+      max-width: 100px;
+      min-width: 100px;
+      font-size: 18px;
+      padding: 15px 66px 21px;
+    }
+
+    &--empty-cell {
+      display: none;
+
+      @include tablet-width {
+        position: relative;
+        display: table-cell;
+        background-color: $grey;
+        padding-top: 9px;
+        border-color: $grey;
+        border-right: 2px solid $dark-blue;
+        border-top: 2px solid $grey;
+        border-bottom: 2px solid #e5e5e5;
+      }
+
+      @include desktop-width {
+        padding-top: 13px;
+      }
+    }
+
+    &:last-child {
+      @include tablet-width {
+        border-right-color: $dark-blue;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+    }
+
+    &:nth-child(3) {
+      position: relative;
+    }
+  }
+
+  &__hit {
+      position: absolute;
+      background-color: $pink;
+      font-family: 'Open Sans Semibold';
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 30px;
+      width: 45px;
+      left: 3px;
+      top: 11px;
+      transform: rotate(-45deg);
+      @include tablet-width {
+        line-height: 26px;
+        left: 0px;
+        top: 3px;
+      }
+      @include desktop-width {
+        line-height: 30px;
+        left: -3px;
+        top: 11px;
+      }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border: 15px solid transparent;
+      border-bottom: 15px solid $pink;
+      width: 0;
+      height: 0;
+      @include tablet-width {
+        border: 13px solid transparent;
+        border-bottom: 13px solid $pink;
+      }
+    }
+
+    &::before {
+      border-left: 15px solid $pink;
+      left: 44px;
+
+      @include tablet-width {
+        border-left: 13px solid $pink;
+      }
+
+      @include desktop-width {
+        border-left: 17px solid $pink;
+        border-top: 15px solid $pink;
+        top: 2px;
+        left: 44px;
+      }
+    }
+
+    &::after {
+      border-right: 15px solid $pink;
+      border-bottom: 15px solid $pink;
+      right: 44px;
+
+      @include tablet-width {
+        border-right: 13px solid $pink;
+        border-bottom: 13px solid $pink;
+      }
+
+      @include desktop-width {
+        border-right: 15px solid $pink;
+        border-bottom: 15px solid $pink;
+        top: 2px;
+        right: 44px;
+      }
+    }
+  }
+
+  &__cell {
+    position: relative;
+    border: 2px solid #e5e5e5;
+    padding: 14px 0 15px 22px;
+    line-height: 30px;
+
+    @include tablet-width {
+      padding: 7px 0 8px 14px;
+    }
+
+    @include desktop-width {
+      padding: 15px 0 14px 22px;
+    }
+
+    i {
+      font-size: 0;
+      text-indent: 100%;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &:first-child {
+      display: none;
+
+      @include tablet-width {
+        display: table-cell;
+        text-transform: none;
+        width: 138px;
+      }
+
+      @include desktop-width {
+        width: 211px;
+      }
+    }
+
+    &:not(:first-child) {
+      @include tablet-width {
+        font-size: 0;
+        text-indent: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        border-left-width: 0;
+      }
+    }
+  }
+
+  tr:nth-child(2) .price-table__cell {
+    border-top-width: 0;
+  }
+
+  tr:not(:first-child) .price-table__cell {
+    @include tablet-width {
+      border-top-width: 0;
+    }
+  }
+
+  &__value {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+
+    @include desktop-width {
+      font-size: 24px;
+    }
+  }
+
+  &__check-mark::before,
+  &__check-mark::after {
+    content: '';
+    position: absolute;
+    height: 0;
+    background-color: #3dc644;
+    border: 2px solid #3dc644;
+    border-radius: 2px;
+  }
+
+  &__check-mark::before {
+    width: 13px;
+    top: 34px;
+    right: 35px;
+    transform: rotate(45deg);
+
+    @include tablet-width {
+      top: 26px;
+      right: 77px;
+    }
+
+    @include desktop-width {
+      top: 35px;
+      right: 118px;
+    }
+  }
+
+  &__check-mark::after {
+    width: 25px;
+    transform: rotate(-45deg);
+    top: 30px;
+    right: 15px;
+
+    @include tablet-width {
+      top: 20px;
+      right: 56px;
+    }
+
+    @include desktop-width {
+      top: 30px;
+      right: 97px;
+    }
+  }
+
+  &__uncheck-mark::before,
+  &__uncheck-mark::after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 34px;
+    background-color: #f25b26;
+    border: 2px solid #f25b26;
+    border-radius: 2px;
+
+    top: 27px;
+    right: 14px;
+
+    @include tablet-width {
+      top: 19px;
+      right: 58px;
+    }
+
+    @include desktop-width {
+      top: 28px;
+      right: 100px;
+    }
+  }
+
+  &__uncheck-mark::before {
+    transform: rotate(45deg);
+  }
+
+  &__uncheck-mark::after {
+    transform: rotate(-45deg);
+  }
+
+  &__wrapper {
+    width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 80px 0 47px 0;
+
+    @include tablet-width {
+      width: 620px;
+      padding: 37px 20px 68px 20px;
+    }
+
+    @include desktop-width {
+      width: 942px;
+      padding: 75px 10px 95px;
+    }
+
+    @include desktop-width {
+      width: $desktop-width;
+    }
+
+    #price-table-input-1:checked~.price-table__toggles label[for="price-table-input-1"],
+    #price-table-input-2:checked~.price-table__toggles label[for="price-table-input-2"],
+    #price-table-input-3:checked~.price-table__toggles label[for="price-table-input-3"], {
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+      background-color: #ffffff;
+      border-color: $dark-blue;
+    }
+
+    #price-table-input-1:checked~.price-table {
+      @include mobile-width-only {
+        margin-left: 0;
+        transition: margin-left .3s;
+      }
+    }
+
+    #price-table-input-2:checked~.price-table {
+      @include mobile-width-only {
+        margin-left: -258px;
+        transition: margin-left .3s;
+      }
+    }
+
+    #price-table-input-3:checked~.price-table {
+      @include mobile-width-only {
+        margin-left: -535px;
+        transition: margin-left .3s;
+      }
+    }
+  }
+
+  &__toggles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 64px;
+    height: 12px;
+    margin: 0 auto;
+
+    @include tablet-width {
+      display: none;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    padding: 0;
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    background-color: #bec2c7;
+    border-radius: 3px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

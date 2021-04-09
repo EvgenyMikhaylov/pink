@@ -1,0 +1,19 @@
+.page-title {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+
+  &__wrapper {
+    background-color: #1f2934;
+
+    width: 280px;
+    padding: 29px 20px 54px;
+    margin: 0 auto;
+
+    @include tablet-width {
+      width: $tablet-width;
+    }
+
+
+  }
+}

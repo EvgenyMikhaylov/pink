@@ -1,0 +1,240 @@
+.advantages {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+
+  background-color: #ffffff;
+
+  @include tablet-width {
+    padding-top: 50px;
+  }
+
+  @include desktop-width {
+    padding-top: 65px;
+  }
+
+  &__slogan {
+    position: relative;
+    overflow-x: hidden;
+
+    width: 280px;
+    margin: 0;
+    padding: 0 calc(50% - 140px) 62px;
+
+    color: $dark-blue;
+
+    @include tablet-width {
+      width: 620px;
+      padding: 0 calc(50% - 310px) 96px;
+    }
+
+    @include desktop-width {
+      width: 920px;
+      padding: 0 calc(50% - 460px) 161px;
+    }
+
+    br:first-child {
+      @include tablet-width {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 0;
+
+      border: 30px solid transparent;
+      border-right: 100vw solid #f2f2f2;
+      border-bottom: 0 solid transparent;
+      border-left: 0 solid transparent;
+
+      @include tablet-width {
+        border-width: 50px;
+        border-right-width: 100vw;
+        border-bottom: 0;
+        border-left: 0;
+      }
+
+      @include desktop-width {
+        border-width: 70px;
+        border-right-width: 100vw;
+        border-bottom: 0;
+        border-left: 0;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+
+    margin: 0;
+    padding: 50px calc(50% - 140px) 285px;
+
+    list-style: none;
+
+    background-color: #f2f2f2;
+
+    @include tablet-width {
+      padding: 25px calc(50% - 310px) 5px 50%;
+    }
+
+    @include desktop-width {
+      display: flex;
+      padding: 0 calc(50% - 440px);
+      padding-bottom: 10px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 78px);
+
+      width: 157px;
+      height: 277px;
+
+      background-image: url("../img/iphone-screen.png");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include tablet-width {
+        bottom: -374px;
+        left: calc(50% - 310px);
+
+        width: 267px;
+        height: 1227px;
+
+        background-image: url("../img/iphone-screen3.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      @include desktop-width {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    margin-bottom: 30px;
+
+    @include tablet-width {
+      margin-bottom: 37px;
+    }
+
+    @include desktop-width {
+      width: 245px;
+      margin-right: 75px;
+      padding-top: 275px;
+    }
+
+    &::before {
+      @include desktop-width {
+        content: "";
+        position: absolute;
+        top: -83px;
+        left: -27px;
+
+        width: 294px;
+        height: 304px;
+
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    &:first-child::before {
+      @include desktop-width {
+        background-image: url("../img/Layer156-1.png");
+      }
+    }
+
+    &:nth-child(2)::before {
+      @include desktop-width {
+        background-image: url("../img/Layer156-2.png");
+      }
+    }
+
+    &:last-child::before {
+      @include desktop-width {
+        background-image: url("../img/Layer156-3.png");
+      }
+    }
+
+    &:last-child {
+      @include desktop-width {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    word-wrap: break-word;
+
+    @include tablet-width {
+      text-align: left;
+    }
+
+    @include desktop-width {
+      margin-bottom: 25px;
+
+      font-size: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    br {
+      display: none;
+
+      @include desktop-width {
+        display: block;
+      }
+    }
+  }
+
+  &__description {
+    line-height: 24px;
+    text-align: center;
+
+    @include tablet-width {
+      margin: 0;
+      padding: 0;
+
+      text-align: left;
+    }
+
+    @include desktop-width {
+      line-height: 30px;
+      text-align: center;
+    }
+
+
+    br {
+      display: none;
+
+      @include tablet-width {
+        display: block;
+      }
+
+      @include desktop-width {
+        display: none;
+      }
+    }
+  }
+}

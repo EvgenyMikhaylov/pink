@@ -1,0 +1,107 @@
+.page-header {
+  margin-bottom: -66px;
+
+  @include tablet-width {
+    margin-bottom: -110px;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @include desktop-width {
+      display: flex;
+      justify-content: space-between;
+      width: 940px;
+      margin: 0 auto;
+      padding: 0 calc(50% - 470px);
+
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      background-color: $dark-blue;
+    }
+  }
+
+  &__logo {
+    &:hover {
+      .logo {
+        &__mobile-pink,
+        &__tablet-glasses,
+        &__desktop-glasses,
+        &__middle,
+        &__pink {
+          path {
+            fill: $pink;
+          }
+        }
+      }
+    }
+
+    &:active {
+      .logo {
+        &__mobile-pink,
+        &__tablet-glasses,
+        &__desktop-glasses,
+        &__middle,
+        &__pink,
+        &__stars,
+        &__point {
+          path {
+            fill: rgba(#ffffff, 0.3);
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      width: 75px;
+      height: 23px;
+      margin: 0 auto;
+      padding: 21px calc((100% - 75px) * 0.91836735) 22px calc((100% - 75px) * 0.08163265);
+
+      color: #ffffff;
+
+      background-color: rgba(0, 0, 0, 0.3);
+
+      @include tablet-width {
+        width: 150px;
+        height: 40px;
+        padding: 27px calc((100% - 150px) * 0.96078431) 42px calc((100% - 150px) * 0.03921569);
+      }
+
+      @include desktop-width {
+        margin: 0;
+        padding: 27px 0 43px;
+
+        background-color: transparent;
+        border-bottom: none;
+      }
+
+      &--opened {
+        padding-bottom: 25px;
+
+        background-color: $dark-blue;
+        border-bottom: 1px solid #000000;
+
+        @include tablet-width {
+          padding-bottom: 42px;
+        }
+
+        @include desktop-width {
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}

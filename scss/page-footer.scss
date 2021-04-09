@@ -1,0 +1,188 @@
+.page-footer {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  @include tablet-width {
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+    padding: 39px calc(50% - 310px) 37px;
+  }
+
+  @include desktop-width {
+    width: 940px;
+    padding: 73px calc(50% - 470px) 75px;
+  }
+
+  &__logo {
+    margin: 0 auto 40px;
+    display: block;
+    width: 150px;
+    height: 41px;
+
+    @include tablet-width {
+      margin: 0;
+    }
+
+    &:hover {
+      .logo {
+        &__mobile-pink,
+        &__tablet-glasses,
+        &__desktop-glasses,
+        &__middle,
+        &__pink,
+        &__stars {
+          path {
+            fill: $pink;
+          }
+        }
+      }
+    }
+
+    &:active {
+      .logo {
+        &__tablet-glasses,
+        &__desktop-glasses,
+        &__middle,
+        &__point {
+          path {
+            fill: rgba($pink, 0.3);
+          }
+        }
+
+        &__pink,
+        &__stars {
+          path {
+            fill: rgba($dark-blue, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  &__soc-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 178px;
+    margin: 0 auto 30px;
+
+    @include tablet-width {
+      margin: 0;
+    }
+  }
+
+  &__soc-icon {
+    width: 52px;
+    height: 51px;
+    position: relative;
+    color: $pink;
+
+    &:hover {
+      &::before {
+        border-color: $dark-blue;
+      }
+    }
+
+    &:active {
+      color: rgba(210, 40, 86, 0.3);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 52px;
+      height: 51px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 3px solid rgba(40, 54, 69, 0.1);
+    }
+
+    svg {
+      position: absolute;
+    }
+
+    &--tw {
+      &::before {
+        top: -2px;
+        left: 1px;
+      }
+
+      svg {
+        top: 16px;
+        left: 18px;
+      }
+    }
+
+    &--fk {
+      &::before {
+        top: -2px;
+        left: -1px;
+      }
+
+      svg {
+        top: 14px;
+        left: 21px;
+      }
+    }
+
+    &--youtube {
+      &::before {
+        top: -1px;
+        left: 0;
+      }
+
+      svg {
+        top: 18px;
+        left: 20px;
+      }
+    }
+  }
+
+  &__developers {
+    position: relative;
+    width: 90px;
+    font-size: 14px;
+    padding: 18px 45px 18px 5px;
+    line-height: 18px;
+    font-weight: 400;
+    margin: 0 auto;
+
+    @include tablet-width {
+      margin: 0;
+    }
+
+    a {
+      position: absolute;
+      width: 27px;
+      height: 34px;
+      top: 8px;
+      left: 108px;
+      color: $pink;
+
+      @include desktop-width {
+        left: 118px;
+      }
+
+      &:hover {
+        color: $dark-blue;
+      }
+
+      &:active {
+        color: rgba(40, 54, 69, 0.3);
+      }
+
+      svg {
+        width: 27px;
+        height: 34px;
+      }
+    }
+
+    @include desktop-width {
+      width: 110px;
+      font-size: 18px;
+      padding: 15px 40px 18px 0;
+    }
+  }
+}

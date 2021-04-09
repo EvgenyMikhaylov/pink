@@ -1,0 +1,241 @@
+.main-navigation {
+  position: relative;
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include desktop-width {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 620px;
+
+      background-color: transparent;
+    }
+  }
+
+  &__item {
+    @include desktop-width {
+      margin-right: 20px;
+    }
+
+    &--active {
+      @include desktop-width {
+        position: relative;
+      }
+
+      &::after {
+        @include desktop-width {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: -2px;
+          left: 0;
+
+          height: 2px;
+
+          background-color: #ffffff;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background-color: $dark-blue;
+
+    transition-property: max-height, padding, border-width;
+
+    @include desktop-width {
+      max-height: none;
+      padding: 46px 0;
+
+      font-weight: 300;
+      line-height: 18px;
+      text-transform: none;
+
+      background-color: transparent;
+      border: none;
+
+      transition: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: $pink;
+    }
+
+    &:active {
+      color: $dark-pink;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: -45px;
+    right: 20px;
+
+    width: 50px;
+    height: 25px;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    transition: width 0.3s;
+
+    @include tablet-width {
+      top: -66px;
+      right: 3.030303%;
+    }
+
+    @include desktop-width {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+
+      width: 46px;
+      height: 0;
+
+      background-color: #ffffff;
+      border: 2px solid #ffffff;
+
+      transition: width 0.3s,
+        left 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
+    }
+
+    &::before {
+      box-shadow: 0 -10px 0 0 #ffffff;
+    }
+
+    &::after {
+      box-shadow: 0 10px 0 0 #ffffff;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        background-color: $pink;
+        border-color: $pink;
+        box-shadow: 0 -10px 0 0 $pink;
+      }
+
+      &::after {
+        background-color: $pink;
+        border-color: $pink;
+        box-shadow: 0 10px 0 0 $pink;
+      }
+    }
+
+    &:active {
+      &::before {
+        background-color: $dark-pink;
+        border-color: $dark-pink;
+        box-shadow: 0 -10px 0 0 $dark-pink;
+      }
+
+      &::after {
+        background-color: $dark-pink;
+        border-color: $dark-pink;
+        box-shadow: 0 10px 0 0 $dark-pink;
+      }
+    }
+  }
+
+  &--opened {
+    .main-navigation {
+      &__menu {
+        background-color: $dark-blue;
+
+        @include desktop-width {
+          background-color: transparent;
+        }
+      }
+
+      &__toggle {
+        width: 23px;
+        height: 22px;
+
+        @include tablet-width {
+          top: -61px;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          top: 6px;
+          left: -3px;
+
+          width: 27px;
+          height: 0;
+
+          border-radius: 2px;
+          box-shadow: 0 0 0 0 #ffffff;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+
+      &__link {
+        max-height: 70px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        background-color: $dark-blue;
+        border-top: 1px solid #485461;
+        border-bottom: 1px solid #000101;
+
+        @include desktop-width {
+          max-height: none;
+          padding: 46px 0;
+
+          background-color: transparent;
+          border: none;
+
+          transition: none;
+        }
+      }
+    }
+  }
+
+  &--nojs {
+    .main-navigation {
+      &__toggle {
+        display: none;
+      }
+    }
+  }
+}

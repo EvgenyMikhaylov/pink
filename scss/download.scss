@@ -1,0 +1,150 @@
+.download {
+  width: 100%;
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  background-color: #1d2631;
+
+  @include tablet-width {
+    width: 300px;
+    padding: 201px calc(8px + 50%)  112px calc(50% - 308px);
+
+    background: url("../img/iphone6-tablet.png") 70% bottom no-repeat,
+      url("../img/back-tablet@1x.jpg") 50% 90% no-repeat;
+    background-size: auto, cover;
+  }
+
+  @include desktop-width {
+    padding: 219px calc(50% + 170px) 121px calc(50% - 470px);
+
+    background: url("../img/iphone6-desktop.png") 70% bottom no-repeat,
+      url("../img/back-desktop.jpg") 50% 100% no-repeat;
+    background-size: auto, cover;
+  }
+
+  &__slogan {
+    padding: 89px 0 314px;
+
+    background: url("../img/iphone-5-in-hand.png") 50% bottom no-repeat,
+      url("../img/back-mobile@1x.jpg") 0 0 no-repeat;
+    background-size: auto, cover;
+
+    @include tablet-width {
+      width: auto;
+      margin: 0;
+      margin-bottom: 30px;
+      padding: 0;
+
+      background: none;
+    }
+
+    @include desktop-width {
+      margin-bottom: 50px;
+    }
+
+    br:first-child {
+      @include mobile-width-only {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 32px;
+
+    color: #ffffff;
+
+    @include tablet-width {
+      width: 300px;
+      margin-bottom: 46px;
+    }
+
+    @include desktop-width {
+      margin-bottom: 67px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $pink;
+
+      background-color: #ffffff;
+      outline: none;
+    }
+
+    &:active {
+      color: $dark-pink;
+
+      background-color: #ffffff;
+    }
+  }
+
+  &__availability {
+    padding: 28px 20px 29px;
+
+    @include tablet-width {
+      padding: 0;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 206px;
+    margin: 0 auto 23px auto;
+
+    font-size: 0;
+    line-height: 0;
+
+    @include tablet-width {
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    @include desktop-width {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__icon {
+    width: 47px;
+    height: 56px;
+
+    &--apple {
+      background-image: url("../img/index-sprite.svg#android-logo");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--android {
+      background-image: url("../pictures/android-logo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--windows {
+      background-image: url("../pictures/microsoft-logo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__description {
+    width: 280px;
+    margin: 0 auto;
+    display: block;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+
+    @include tablet-width {
+      margin: 0;
+      width: auto;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}

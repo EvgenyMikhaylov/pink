@@ -1,0 +1,203 @@
+.reviews {
+  position: relative;
+  background-color: #ffffff;
+  padding: 43px 20px 56px 20px;
+  margin: 0 auto;
+  width: 280px;
+
+  &::before {
+    @include desktop-width {
+      position: absolute;
+      content: "";
+      width: 80px;
+      height: 70px;
+      left: 440px;
+      top: 65px;
+      background-image: url("../img/index-sprite.svg#quotes");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include tablet-width {
+    width: 620px;
+    padding: 0 20px;
+  }
+
+  @include desktop-width {
+    width: 940px;
+    padding: 185px 10px 114px 10px;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+	&__item-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+
+    @include desktop-width {
+      width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+	&__author-name {
+    margin: 0;
+    padding: 0;
+		font-size: 18px;
+		line-height: 30px;
+		font-weight: 700;
+		color: #000000;
+		text-align: center;
+		margin-bottom: 13px;
+		order: -1;
+
+    @include tablet-width {
+      order: 0;
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    @include desktop-width {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+	}
+
+  &__review {
+    text-align: center;
+    margin: 0 auto;
+    line-height: 30px;
+    margin-bottom: 29px;
+
+    @include tablet-width {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+	&__author-age {
+		display: none;
+
+    @include tablet-width {
+      display: flex;
+      margin-bottom: 35px;
+    }
+
+    @include desktop-width {
+      margin-bottom: 0;
+    }
+	}
+
+	&__toggles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+		width: 64px;
+		height: 12px;
+		margin: 0 auto;
+
+    @include tablet-width {
+      padding-bottom: 72px;
+    }
+
+    @include desktop-width {
+      display: none;
+    }
+	}
+
+	&__toggle {
+		cursor: pointer;
+		padding: 0;
+		width: 6px;
+		height: 6px;
+		border: 3px solid transparent;
+		background-color: #bec2c7;
+		border-radius: 3px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		&--active {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+			background-color: #ffffff;
+			border-color: $dark-blue;
+		}
+	}
+
+	&__arrow {
+		display: none;
+
+    @include desktop-width {
+      position: absolute;
+      top: 42.5%;
+      width: 25px;
+      height: 50px;
+      display: block;
+      background-color: transparent;
+      border: none;
+      z-index: 1000;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 30px;
+      background-color: #e5e5e5;
+    }
+
+    &::before {
+      top: 0;
+      left: 10px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 20px;
+      left: 10px;
+      transform: rotate(-45deg);
+    }
+
+    &--next {
+      right: 10px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 19px solid transparent;
+    border-right: 320px solid $grey;
+    border-bottom: 0 solid transparent;
+    border-left: 0 solid transparent;
+    bottom: 0;
+    left: 0;
+
+    @include tablet-width {
+      border-width: 50px;
+      border-right-width: $tablet-width;
+      border-bottom: 0;
+      border-left: 0;
+    }
+
+    @include desktop-width {
+      border-width: 65px;
+      border-right-width: $desktop-width;
+      border-bottom: 0;
+      border-left: 0;
+    }
+  }
+}

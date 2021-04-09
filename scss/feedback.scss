@@ -1,0 +1,117 @@
+.feedback {
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 43px;
+  @include tablet-width {
+    padding-top: 47px;
+  }
+  @include desktop-width {
+    width: 960px;
+    padding: 65px calc(50% - 480px) 0;
+  }
+  &__slogan {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 35px;
+    color: $dark-blue;
+    @include desktop-width {
+      margin-bottom: 45px;
+    }
+  }
+  &__text {
+    display: block;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    text-align: center;
+    @include desktop-width {
+      margin-bottom: 25px;
+    }
+  }
+  &__info {
+    display: block;
+    color: $pink;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+  }
+  &__phone {
+    margin: 0 20px 21px;
+  }
+
+  &__email {
+    margin: 0 20px 29px;
+
+    @include tablet-width {
+      margin-bottom: 50px;
+    }
+
+    @include desktop-width {
+      order: 1;
+    }
+  }
+
+  &__address {
+    margin: 0 20px 18px;
+  }
+
+  &__blocks {
+    @include desktop-width {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__wrapper {
+    padding-bottom: 15px;
+
+    @include tablet-width {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px 0 15px;
+    }
+
+    @include desktop-width {
+      padding-bottom: 19px;
+    }
+  }
+
+  &__map {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    @include tablet-width {
+      height: 372px;
+    }
+    @include desktop-width {
+      height: 483px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-top: 33px solid #fff;
+      z-index: 1;
+
+      @include tablet-width {
+        border-top-width: 66px;
+      }
+
+      @include desktop-width {
+        border-left: 460px solid transparent;
+        border-right: 460px solid transparent;
+        border-top-width: 83px;
+      }
+    }
+  }
+
+}
